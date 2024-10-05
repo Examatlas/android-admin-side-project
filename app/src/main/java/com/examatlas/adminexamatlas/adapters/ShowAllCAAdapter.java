@@ -44,6 +44,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +57,7 @@ public class ShowAllCAAdapter extends RecyclerView.Adapter<ShowAllCAAdapter.View
         this.showAllCAModelArrayList = showAllCAModelArrayList;
         this.context = context;
         this.orginalShowAllCAModelArrayList = new ArrayList<>(showAllCAModelArrayList);
+        Collections.reverse(this.showAllCAModelArrayList);
     }
 
     @NonNull

@@ -31,6 +31,7 @@ import com.examatlas.adminexamatlas.extraClasses.SessionManager;
 import com.examatlas.adminexamatlas.fragment.BlogCreateDeleteFragment;
 import com.examatlas.adminexamatlas.fragment.CoursesCreateDeleteFragment;
 import com.examatlas.adminexamatlas.fragment.CurrentAffairCreateDeleteFragment;
+import com.examatlas.adminexamatlas.fragment.EBooksCreateDeleteFragment;
 import com.examatlas.adminexamatlas.fragment.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
@@ -92,7 +93,7 @@ public class DashboardActivity extends AppCompatActivity {
     private Spinner masterDropdown,contentDropdown,websiteAppDropdown,marketingDropdown,manageDropdown,usersDropdown,reportsDropdown;
     ImageView masterDropdownIcon,contentDropdownIcon,websiteAppDropdownIcon,marketingDropdownIcon,userDropdownIcon,reportDropdownIcon,manageDropdownIcon;
     String [] masterItems = {"Select from below","Subject","Category","Sub Category"};
-    String [] contentItems = {"Select from below","Courses","Live Classes","Mock Test","Blog","Current Affairs","Test Series","Bundle","Batch","Ebooks","Podcast","Webinar","Digital Products","Free Resource","Telegram","Utilities","Legacy Question Pool","Question Pool","Subscription","News Feed","Communities","Categories","Segments","Tags"};
+    String [] contentItems = {"Select from below","Courses","Live Classes","Mock Test","Blog","Current Affairs","Test Series","Bundle","Batch","EBooks","Podcast","Webinar","Digital Products","Free Resource","Telegram","Utilities","Legacy Question Pool","Question Pool","Subscription","News Feed","Communities","Categories","Segments","Tags"};
     String [] websiteAppItems = {"Select from below","Website","Mobile App","Branding","Embeddable","Language","SignUp Settings","Custom Fields"};
     String [] marketingItems = {"Select from below","Messenger","Coupons","Wallet","Referral Code","Integrations","Affiliates","Forms", "CTA","Events"};
     String [] usersItems = {"Select from below","Learners","Groups","Sub-Admins","Contacts"};
@@ -364,6 +365,10 @@ public class DashboardActivity extends AppCompatActivity {
                     } else if (contentItemsSelected.equals("Courses")){
                         loadFragment(new CoursesCreateDeleteFragment());
                         currentFragment = new CoursesCreateDeleteFragment();
+                        drawerDialog.dismiss();
+                    } else if (contentItemsSelected.equals("EBooks")){
+                        loadFragment(new EBooksCreateDeleteFragment());
+                        currentFragment = new EBooksCreateDeleteFragment();
                         drawerDialog.dismiss();
                     }
                 }

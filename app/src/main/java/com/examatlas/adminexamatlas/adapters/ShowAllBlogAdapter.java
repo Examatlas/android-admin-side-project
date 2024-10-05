@@ -44,6 +44,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,6 +58,7 @@ public class ShowAllBlogAdapter extends RecyclerView.Adapter<ShowAllBlogAdapter.
         this.showAllBlogModelArrayList = showAllBlogModelArrayList;
         this.context = context;
         this.orginalShowAllBlogModelArrayList = new ArrayList<>(showAllBlogModelArrayList);
+        Collections.reverse(this.showAllBlogModelArrayList);
     }
 
     @NonNull

@@ -19,16 +19,18 @@ import com.examatlas.adminexamatlas.models.ShowAllCAModel;
 import com.examatlas.adminexamatlas.models.ShowAllCourseModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ShowAllCoursesAdapter extends RecyclerView.Adapter<ShowAllCoursesAdapter.ViewHolder> {
     Fragment context;
     ArrayList<ShowAllCourseModel> showAllCourseModelArrayList;
     ArrayList<ShowAllCourseModel> orginalShowAllBlogModelArrayList;
-    private String currentQuery = "";
+        private String currentQuery = "";
     public ShowAllCoursesAdapter(Fragment context, ArrayList<ShowAllCourseModel> showAllCourseModelArrayList2) {
         this.context = context;
         this.showAllCourseModelArrayList = showAllCourseModelArrayList2;
         this.orginalShowAllBlogModelArrayList = new ArrayList<>(showAllCourseModelArrayList2);
+        Collections.reverse(this.showAllCourseModelArrayList);
     }
 
     @NonNull
