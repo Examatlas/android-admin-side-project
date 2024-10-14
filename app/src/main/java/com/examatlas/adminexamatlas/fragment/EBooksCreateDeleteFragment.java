@@ -94,6 +94,7 @@ public class EBooksCreateDeleteFragment extends Fragment {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // If the searchView is shown and the touch is outside of it
                     if (searchView.isShown() && !isPointInsideView(event.getRawX(), event.getRawY(), searchView)) {
                         searchView.setIconified(true); // Collapse the search view
                         InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -143,7 +144,7 @@ public class EBooksCreateDeleteFragment extends Fragment {
         InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(searchView, InputMethodManager.SHOW_IMPLICIT); // Show the keyboard
     }
-    private void showAllEbooksFunction() {
+    public void showAllEbooksFunction() {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, ebookURL, null,
                 new Response.Listener<JSONObject>() {
                     @Override

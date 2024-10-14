@@ -28,13 +28,34 @@
             android:scaleType="centerCrop"
             android:src="@drawable/noimage" />
 
-    </com.google.android.material.card.MaterialCardView>
 
+    </com.google.android.material.card.MaterialCardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+            <ImageView
+                android:id="@+id/editEbookBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_edit"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+            <ImageView
+                android:id="@+id/deleteEbookBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_delete"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
     <TextView
         android:id="@+id/txtBookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins"
         android:text="EBook Name"
         android:textAlignment="center"

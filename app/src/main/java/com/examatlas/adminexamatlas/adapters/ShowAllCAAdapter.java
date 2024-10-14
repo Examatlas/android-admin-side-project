@@ -69,7 +69,6 @@ public class ShowAllCAAdapter extends RecyclerView.Adapter<ShowAllCAAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ShowAllCAAdapter.ViewHolder holder, int position) {
-
         ShowAllCAModel currentCA = showAllCAModelArrayList.get(showAllCAModelArrayList.size() - 1 - position);
         holder.itemView.setTag(currentCA);
 
@@ -82,8 +81,8 @@ public class ShowAllCAAdapter extends RecyclerView.Adapter<ShowAllCAAdapter.View
 
         holder.editCABtn.setOnClickListener(view -> openEditBlogDialog(currentCA));
         holder.deleteCABtn.setOnClickListener(view -> quitDialog(position));
-
     }
+
 
     @Override
     public int getItemCount() {
