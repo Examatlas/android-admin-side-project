@@ -73,8 +73,8 @@ public class ShowAllEBookAdapter extends RecyclerView.Adapter<ShowAllEBookAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         // Access the last item first
-        ShowAllEBooksModel currentEbook = ebookModelArrayList.get(ebookModelArrayList.size() - 1 - position);
-        holder.itemView.setTag(currentEbook);
+            ShowAllEBooksModel currentEbook = ebookModelArrayList.get(ebookModelArrayList.size() - 1 - position);
+            holder.itemView.setTag(currentEbook);
 
         holder.setHighlightedText(holder.title, currentEbook.getTitle(), currentQuery);
         holder.setHighlightedText(holder.content, currentEbook.getContent(), currentQuery);

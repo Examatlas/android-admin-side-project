@@ -235,7 +235,6 @@ public class ShowAllBlogAdapter extends RecyclerView.Adapter<ShowAllBlogAdapter.
         } catch (JSONException e) {
             Log.e("JSON_ERROR", "Error creating JSON object: " + e.getMessage());
         }
-
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PUT, updateURL, blogDetails,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -268,7 +267,7 @@ public class ShowAllBlogAdapter extends RecyclerView.Adapter<ShowAllBlogAdapter.
                 Toast.makeText(context.getContext(), errorMessage, Toast.LENGTH_LONG).show();
                 Log.e("BlogUpdateError", errorMessage);
             }
-        }) {
+        }){
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<>();
@@ -276,7 +275,6 @@ public class ShowAllBlogAdapter extends RecyclerView.Adapter<ShowAllBlogAdapter.
                 return headers;
             }
         };
-
         MySingletonFragment.getInstance(context).addToRequestQueue(jsonObjectRequest);
     }
 
